@@ -22,7 +22,7 @@ return require("packer").startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig")
-     
+
 	-- Linter/Formatter setup
 	use("mfussenegger/nvim-lint")
 	use("mhartington/formatter.nvim")
@@ -34,11 +34,10 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 
 	-- LaTeX handling
-	--use 'lervag/vimtex'
+	use("lervag/vimtex")
 
 	-- Markdown Handling
 	use("godlygeek/tabular")
-	--use 'preservim/vim-markdown'
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",

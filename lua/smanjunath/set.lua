@@ -23,3 +23,7 @@ vim.o.autoread = true
 
 -- Termguicolors for colorschemes
 vim.o.termguicolors = true
+
+-- Search as characters are entered, and highlight matches
+vim.o.incsearch = true
+vim.o.hlsearch = true
