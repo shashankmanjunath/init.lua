@@ -1,5 +1,8 @@
 -- Sets custom neovim settings
 
+-- Encoding
+vim.o.encoding = "utf-8"
+
 -- Relative Line Numbers
 vim.o.number = true
 vim.o.relativenumber = true
@@ -27,3 +30,6 @@ vim.o.termguicolors = true
 -- Search as characters are entered, and highlight matches
 vim.o.incsearch = true
 vim.o.hlsearch = true
+
+-- Setting python provider
+vim.api.nvim_set_var("python3_host_prog", "python")
