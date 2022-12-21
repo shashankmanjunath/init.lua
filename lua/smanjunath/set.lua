@@ -27,6 +27,9 @@ vim.o.autoread = true
 -- Termguicolors for colorschemes
 vim.o.termguicolors = true
 
+-- Setting background dark
+vim.o.background = "dark"
+
 -- Search as characters are entered, and highlight matches
 vim.o.incsearch = true
 vim.o.hlsearch = true

@@ -31,7 +31,6 @@ return require("packer").startup(function(use)
 	use("mhartington/formatter.nvim")
 
 	-- Autocompletion
-	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
@@ -41,6 +40,14 @@ return require("packer").startup(function(use)
 	-- For vsnip users.
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
+
+	-- Autopairs
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
 
 	-- Writing Documents
 	use("junegunn/goyo.vim")
@@ -63,10 +70,5 @@ return require("packer").startup(function(use)
 	})
 
 	-- Colorscheme
-	use({
-		"bluz71/vim-nightfly-colors",
-		config = function()
-			vim.cmd("colorscheme nightfly")
-		end,
-	})
+	use("Shatur/neovim-ayu")
 end)
