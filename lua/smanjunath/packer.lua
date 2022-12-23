@@ -70,5 +70,5 @@ return require("packer").startup(function(use)
 	})
 
 	-- Colorscheme
-	use("Shatur/neovim-ayu")
+	use("EdenEast/nightfox.nvim")
 end)
