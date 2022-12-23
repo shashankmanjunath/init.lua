@@ -13,13 +13,14 @@ vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
--- Adding line at 80 characters
-vim.o.colorcolumn = 80
+-- 80 character maximum
+vim.opt.colorcolumn = "80"
+vim.opt.textwidth = 80
 
 -- Turning off swap files
-vim.o.swapfile = false
-vim.o.backup = false
-vim.o.wb = false
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.wb = false
 
 -- Automatically refresh after buffer is changed externally
 vim.o.autoread = true
