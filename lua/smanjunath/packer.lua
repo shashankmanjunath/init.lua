@@ -69,6 +69,21 @@ return require("packer").startup(function(use)
 		ft = { "markdown" },
 	})
 
+	-- Quarto
+	use({
+		"quarto-dev/quarto-vim",
+		requires = {
+			{ "vim-pandoc/vim-pandoc-syntax" },
+		},
+		ft = { "quarto" },
+	})
+
 	-- Colorscheme
 	use("EdenEast/nightfox.nvim")
+
+	-- Jupyter Notebooks
+	use({ "hkupty/iron.nvim" })
+	use({ "kana/vim-textobj-user" })
+	use({ "kana/vim-textobj-line" })
+	use({ "GCBallesteros/vim-textobj-hydrogen" })
 end)
