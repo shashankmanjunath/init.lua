@@ -17,7 +17,7 @@ require("mason-lspconfig").setup({
 		-- Cmake
 		"cmake",
 		-- Lua
-		"sumneko_lua",
+		"lua_ls",
 		-- Bash
 		"bashls",
 		-- Docker
@@ -171,7 +171,7 @@ require("lspconfig")["cmake"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["sumneko_lua"].setup({
+require("lspconfig")["lua_ls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
