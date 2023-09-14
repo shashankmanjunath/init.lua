@@ -34,37 +34,30 @@ plugins = {
 	},
 
 	{
-		-- LSP Setup
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	},
-
-	{
 		-- Linter/Formatter setup
 		"mfussenegger/nvim-lint",
 		"mhartington/formatter.nvim",
 	},
 
 	{
-		-- Autocompletion
 		"hrsh7th/nvim-cmp",
-		-- load cmp on InsertEnter
-		event = "InsertEnter",
-		-- these dependencies will only be loaded when cmp loads
-		-- dependencies are always lazy-loaded unless specified otherwise
+		tag = "v0.0.1",
 		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/nvim-cmp",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-vsnip",
 		},
+		event = "InsertEnter",
+		-- config = function()
+		--   require("after/lsp_config.lua")
+		-- end,
 	},
 
 	{
-		-- For vsnip users.
-		"hrsh7th/cmp-vsnip",
-		"hrsh7th/vim-vsnip",
+		-- LSP Setup
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
 	},
 
 	{

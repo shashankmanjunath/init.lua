@@ -36,9 +36,6 @@ require("mason-lspconfig").setup({
 	automatic_installation = false,
 })
 
--- Set up nvim-cmp.
-local cmp = require("cmp")
-
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
@@ -80,6 +77,9 @@ local on_attach = function(client, bufnr)
 	end, bufopts)
 end
 
+-- Set up nvim-cmp.
+local cmp = require("cmp")
+
 -- Autocompletion setup
 cmp.setup({
 	snippet = {
@@ -100,8 +100,8 @@ cmp.setup({
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-    -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-		["<CR>"] = cmp.mapping.confirm({ select = false }), 
+		-- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
