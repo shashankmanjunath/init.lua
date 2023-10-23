@@ -27,10 +27,9 @@ plugins = {
 	},
 
 	{
-		-- Fuzzy finder
-		"junegunn/fzf",
-		run = ":call fzf#install()",
-		"junegunn/fzf.vim",
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.4",
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
 	{
