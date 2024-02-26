@@ -1,5 +1,5 @@
 require("lint").linters_by_ft = {
-	tex = { "lacheck", "chktex" },
+	tex = { "lacheck" },
 	markdown = { "markdownlint" },
 	lua = { "luacheck" },
 	sh = { "ShellCheck" },
