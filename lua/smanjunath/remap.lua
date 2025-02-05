@@ -33,3 +33,7 @@ vim.keymap.set("n", "<leader>7", "7gt", silentnoremap)
 vim.keymap.set("n", "<leader>8", "8gt", silentnoremap)
 vim.keymap.set("n", "<leader>9", "9gt", silentnoremap)
 vim.keymap.set("n", "<leader>0", ":tablast<CR>", silentnoremap)
+
+-- Splits
+vim.keymap.set("n", "<leader>v", ":vsplit<CR>", silentnoremap)
+vim.keymap.set("n", "<leader>h", ":split<CR>", silentnoremap)

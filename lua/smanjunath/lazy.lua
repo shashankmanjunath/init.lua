@@ -23,7 +23,7 @@ plugins = {
 	-- Status Line
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	{
@@ -87,28 +87,8 @@ plugins = {
 		ft = { "markdown" },
 	},
 
-	-- Quarto
-	{
-		"quarto-dev/quarto-vim",
-		requires = {
-			{ "vim-pandoc/vim-pandoc-syntax" },
-		},
-		ft = { "quarto" },
-	},
-
 	-- Colorscheme
 	{ "EdenEast/nightfox.nvim" },
-
-	-- Jupyter Notebooks
-	{
-		"hkupty/iron.nvim",
-
-		dependencies = {
-			"kana/vim-textobj-user",
-			"kana/vim-textobj-line",
-			"GCBallesteros/vim-textobj-hydrogen",
-		},
-	},
 }
 
 require("lazy").setup(plugins)

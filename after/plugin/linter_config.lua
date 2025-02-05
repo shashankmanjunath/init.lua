@@ -1,6 +1,6 @@
 require("lint").linters_by_ft = {
 	tex = { "lacheck" },
-	markdown = { "markdownlint" },
+	-- markdown = { "markdownlint" },
 	lua = { "luacheck" },
 	sh = { "ShellCheck" },
 	dockerfile = { "hadolint" },
