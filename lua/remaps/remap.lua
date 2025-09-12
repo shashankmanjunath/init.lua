@@ -9,7 +9,7 @@ vim.keymap.set("i", "jk", "<Esc>", silentnoremap)
 vim.keymap.set("n", "<leader><space>", ":nohlsearch<CR>", silentnoremap)
 
 -- Remapping fzf commands
-vim.keymap.set("n", "<leader>r", ":Files<CR>", silentnoremap)
+-- vim.keymap.set("n", "<leader>r", ":Telescope find_files<CR>", silentnoremap)
 
 -- Markdown Preview Commands
 vim.keymap.set("n", "<C-s>", "<Plug>MarkdownPreview", silentnoremap)

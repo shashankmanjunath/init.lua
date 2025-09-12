@@ -1,0 +1,31 @@
+return {
+	{ "junegunn/goyo.vim" },
+	{ "godlygeek/tabular" },
+	{
+		"lervag/vimtex",
+		config = function()
+			-- LaTeX handling
+			vim.api.nvim_set_var("tex_flavor", "latexmk")
+			vim.api.nvim_set_var("vimtex_view_method", "sioyek")
+			vim.api.nvim_set_var("vimtex_view_sioyek_exe", "/Applications/sioyek.app/Contents/MacOS/sioyek")
+			vim.api.nvim_set_var("vimtex_quickfix_mode", 0)
+
+			-- Setting build dir to subdirectory with name of the current file
+			vim.api.nvim_set_var("vimtex_compiler_latexmk", "{'build_dir': {-> expand(\"%:t:r\")}}")
+			-- vim.cmd([[ let g:vimtex_compiler_latexmk_engines = {'_' : '-lualatex'} ]])
+			vim.cmd([[ let g:vimtex_compiler_latexmk_engines = {'_' : '-pdflatex'} ]])
+			-- vim.cmd([[ let g:vimtex_compiler_latexmk_engines = {'_' : '-xelatex'} ]])
+			vim.cmd(
+				[[ let g:vimtex_compiler_latexmk = {'aux_dir': {-> expand("%:t:r")}, 'out_dir': {-> expand("%:t:r")}} ]]
+			)
+		end,
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
+}
