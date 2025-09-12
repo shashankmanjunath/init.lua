@@ -36,9 +36,9 @@ require("formatter").setup({
 			end,
 		},
 
-		latex = {
-			require("formatter.filetypes.latex").latexindent,
-		},
+		-- latex = {
+		--   require("formatter.filetypes.latex").latexindent,
+		-- },
 
 		markdown = {
 			require("formatter.filetypes.markdown").prettier,

@@ -36,4 +36,10 @@ vim.keymap.set("n", "<leader>0", ":tablast<CR>", silentnoremap)
 
 -- Splits
 vim.keymap.set("n", "<leader>v", ":vsplit<CR>", silentnoremap)
-vim.keymap.set("n", "<leader>h", ":split<CR>", silentnoremap)
+vim.keymap.set("n", "<leader>s", ":split<CR>", silentnoremap)
+vim.keymap.set("n", "<leader>o", ":on<CR>", silentnoremap)
+vim.keymap.set("n", "<leader>d", ":bd<CR>", silentnoremap)
+vim.keymap.set("n", "<leader>w", "<C-w><C-r><CR>", silentnoremap)
+
+-- Terminal
+vim.api.nvim_set_keymap("t", "jk", "<C-\\><C-n>", { noremap = true, silent = true })

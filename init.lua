@@ -1,1 +1,2 @@
-require("smanjunath")
+require("plugins")
+require("remaps")
