@@ -69,54 +69,25 @@ return {
 
 		-- Set up lspconfig.
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-		--
-		-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-		require("lspconfig")["pyright"].setup({
-			on_attach = on_attach,
-			-- flags = lsp_flags,
-			capabilities = capabilities,
-		})
 
-		require("lspconfig")["texlab"].setup({
-			on_attach = on_attach,
-			-- flags = lsp_flags,
-			capabilities = capabilities,
-		})
+		-- Define servers to be configured
+		local servers = {
+			"pyright",
+			"texlab",
+			"clangd",
+			"cmake",
+			"lua_ls",
+			"bashls",
+			"dockerls",
+			"eslint",
+		}
 
-		require("lspconfig")["clangd"].setup({
-			on_attach = on_attach,
-			-- flags = lsp_flags,
-			capabilities = capabilities,
-		})
-
-		require("lspconfig")["cmake"].setup({
-			on_attach = on_attach,
-			-- flags = lsp_flags,
-			capabilities = capabilities,
-		})
-
-		require("lspconfig")["lua_ls"].setup({
-			on_attach = on_attach,
-			-- flags = lsp_flags,
-			capabilities = capabilities,
-		})
-
-		require("lspconfig")["bashls"].setup({
-			on_attach = on_attach,
-			-- flags = lsp_flags,
-			capabilities = capabilities,
-		})
-
-		require("lspconfig")["dockerls"].setup({
-			on_attach = on_attach,
-			-- flags = lsp_flags,
-			capabilities = capabilities,
-		})
-
-		require("lspconfig")["eslint"].setup({
-			on_attach = on_attach,
-			-- flags = lsp_flags,
-			capabilities = capabilities,
-		})
+		-- Configure all servers with the same base settings
+		for _, server in ipairs(servers) do
+			vim.lsp.config(server, {
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+		end
 	end,
 }
