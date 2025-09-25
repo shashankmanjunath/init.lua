@@ -84,9 +84,10 @@ return {
 
 		-- Configure all servers with the same base settings
 		for _, server in ipairs(servers) do
-			vim.lsp.config(server, {
+			vim.lsp.enable(server, {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				autostart = true,
 			})
 		end
 	end,
