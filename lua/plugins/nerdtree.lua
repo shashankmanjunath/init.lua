@@ -1,14 +1,41 @@
 -- File system explorer and comment handling
 return {
-	{ "preservim/nerdtree" },
+	{
+		"nvim-tree/nvim-tree.lua",
+		lazy = true,
+		keys = {
+			{ "<C-n>", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file tree" },
+		},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("nvim-tree").setup({
+				disable_netrw = true,
+				hijack_netrw = true,
+				view = {
+					width = 30,
+					side = "left",
+				},
+				renderer = {
+					icons = {
+						show = {
+							file = true,
+							folder = true,
+							folder_arrow = true,
+							git = true,
+						},
+					},
+				},
+				filters = {
+					dotfiles = false,
+					custom = { "^.git$" },
+				},
+			})
+		end,
+	},
 	{
 		"preservim/nerdcommenter",
+		event = "VeryLazy",
 		config = function()
-			local silentnoremap = { noremap = true, silent = true }
-
-			-- Mapping open NERDTree
-			vim.keymap.set("n", "<C-n>", ":NERDTreeToggle<CR>", silentnoremap)
-
 			-- Add spaces after comment deliniters by default
 			vim.api.nvim_set_var("NERDSpaceDelims", 1)
 

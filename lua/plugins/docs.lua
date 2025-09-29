@@ -1,8 +1,9 @@
 return {
-	{ "junegunn/goyo.vim" },
-	{ "godlygeek/tabular" },
+	{ "junegunn/goyo.vim", cmd = "Goyo" },
+	{ "godlygeek/tabular", cmd = { "Tabularize", "Tab" } },
 	{
 		"lervag/vimtex",
+		ft = { "tex", "latex", "bib" },
 		config = function()
 			-- LaTeX handling
 			vim.api.nvim_set_var("tex_flavor", "latexmk")
