@@ -8,7 +8,8 @@ return {
 			-- This setting has no relation with the `automatic_installation` setting.
 			ensure_installed = {
 				-- Python
-				"pyright",
+				-- "pyright",
+				"ruff",
 				-- Latex
 				"texlab",
 				-- Markdown
