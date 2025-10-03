@@ -13,6 +13,8 @@ return {
 			tag = "v2.4.0",
 		},
 		{ "saadparwaiz1/cmp_luasnip" },
+		-- Added for zotcite
+		{ "jalvesaq/cmp-zotcite" },
 	},
 	event = { "InsertEnter" },
 	config = function()
@@ -32,12 +34,27 @@ return {
 				["<C-e>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item
 			}),
-			sources = cmp.config.sources({
+			-- sources = cmp.config.sources({
+			--   { name = "cmp_zotcite" },
+			--   { name = "nvim_lsp" },
+			--   { name = "luasnip" },
+			--   { name = "buffer" },
+			--   { name = "path" },
+			-- }),
+			sources = {
+				{ name = "cmp_zotcite" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
-			}),
+			},
+			-- Functino which prints the completion source, useful for debugging
+			-- formatting = {
+			--   format = function(entry, vim_item)
+			--     vim_item.menu = entry.source.name
+			--     return vim_item
+			--   end,
+			-- },
 		})
 		-- Use an on_attach function to only map the following keys
 		-- after the language server attaches to the current buffer

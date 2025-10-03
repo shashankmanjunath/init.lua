@@ -29,7 +29,7 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					python = { "black" },
+					python = { "ruff" },
 					markdown = { "prettier" },
 					sh = { "shfmt" },
 				},
