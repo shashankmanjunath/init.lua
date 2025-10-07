@@ -37,3 +37,6 @@ vim.o.hlsearch = true
 
 -- Setting python provider
 vim.api.nvim_set_var("python3_host_prog", "python")
+
+-- Fixing markdown setup
+vim.g.markdown_recommended_style = 0

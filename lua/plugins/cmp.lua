@@ -114,7 +114,7 @@ return {
 
 		-- Define servers to be configured
 		local servers = {
-			-- "pyright",
+			"pyright",
 			"ruff",
 			"texlab",
 			"marksman",
