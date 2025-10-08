@@ -1,5 +1,4 @@
 -- Remaps
-
 local silentnoremap = { noremap = true, silent = true }
 
 -- Remapping Escape to jk
@@ -8,13 +7,13 @@ vim.keymap.set("i", "jk", "<Esc>", silentnoremap)
 -- Turn off search highlight
 vim.keymap.set("n", "<leader><space>", ":nohlsearch<CR>", silentnoremap)
 
--- Remapping fzf commands
--- vim.keymap.set("n", "<leader>r", ":Telescope find_files<CR>", silentnoremap)
-
 -- Markdown Preview Commands
 vim.keymap.set("n", "<C-s>", "<Plug>MarkdownPreview", silentnoremap)
 vim.keymap.set("n", "<M-s>", "<Plug>MarkdownPreviewStop", silentnoremap)
 vim.keymap.set("n", "<C-p>", "<Plug>MarkdownPreviewToggle", silentnoremap)
+
+-- Spell list
+vim.keymap.set("n", "<leader>p", ":set spell spelllang=en_us<CR>", silentnoremap)
 
 -- Fugitive
 -- vim.keymap.set("n", "<leader>gu", ":diffget //<CR>", silentnoremap)

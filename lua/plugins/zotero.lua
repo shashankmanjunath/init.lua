@@ -5,6 +5,9 @@ return {
 		"nvim-telescope/telescope.nvim",
 	},
 	lazy = false,
+	keys = {
+		{ "<leader>zc", "<cmd>Zseek<CR>", desc = "Toggle zotero search" },
+	},
 	config = function()
 		require("zotcite").setup({
 			filetypes = {

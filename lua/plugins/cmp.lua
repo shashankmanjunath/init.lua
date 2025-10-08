@@ -1,5 +1,5 @@
--- TODO: Snippet with header for notes
 -- TODO: Snippet with header for latex + common tex maps
+-- TODO: Write separate file for luasnip
 return {
 	"hrsh7th/nvim-cmp",
 	tag = "v0.0.2",
