@@ -1,8 +1,10 @@
 -- TODO: Snippet with header for latex + common tex maps
 -- TODO: Write separate file for luasnip
+-- TODO: Automatic line wrapping for markdown and latex
 return {
 	"hrsh7th/nvim-cmp",
 	tag = "v0.0.2",
+	lazy = false,
 	dependencies = {
 		{ "neovim/nvim-lspconfig" },
 		{ "hrsh7th/cmp-nvim-lsp" },
@@ -16,12 +18,9 @@ return {
 			config = function()
 				local ls = require("luasnip")
 				require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets/" })
-				-- vim.keymap.set({ "i", "s" }, "<C-L>", function()
-				--   ls.jump(1)
-				-- end, { silent = true })
-				-- vim.keymap.set({ "i", "s" }, "<C-J>", function()
-				--   ls.jump(-1)
-				-- end, { silent = true })
+
+				-- Load markdown snippets for telekasten filetype
+				ls.filetype_extend("telekasten", { "markdown" })
 				vim.keymap.set({ "i", "s" }, "<Tab>", function()
 					if ls.expand_or_jumpable() then
 						ls.expand_or_jump()
@@ -39,10 +38,24 @@ return {
 		},
 		{ "saadparwaiz1/cmp_luasnip" },
 		-- Added for zotcite
-		{ "jalvesaq/cmp-zotcite" },
+		{
+			"jalvesaq/cmp-zotcite",
+			dependencies = { "jalvesaq/zotcite" },
+		},
 	},
-	event = { "InsertEnter" },
+	event = { "InsertEnter", "BufEnter" },
 	config = function()
+		-- Configure cmp-zotcite to work with telekasten files
+		require("cmp_zotcite").setup({
+			filetypes = {
+				"markdown",
+				"pandoc",
+				"rmd",
+				"vimwiki",
+				"telekasten",
+			},
+		})
+
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 
@@ -59,13 +72,6 @@ return {
 				["<C-e>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item
 			}),
-			-- sources = cmp.config.sources({
-			--   { name = "cmp_zotcite" },
-			--   { name = "nvim_lsp" },
-			--   { name = "luasnip" },
-			--   { name = "buffer" },
-			--   { name = "path" },
-			-- }),
 			sources = {
 				{ name = "cmp_zotcite" },
 				{ name = "nvim_lsp" },
@@ -73,14 +79,15 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 			},
-			-- Functino which prints the completion source, useful for debugging
-			-- formatting = {
-			--   format = function(entry, vim_item)
-			--     vim_item.menu = entry.source.name
-			--     return vim_item
-			--   end,
-			-- },
+			-- Function which prints the completion source, useful for debugging
+			formatting = {
+				format = function(entry, vim_item)
+					vim_item.menu = entry.source.name
+					return vim_item
+				end,
+			},
 		})
+
 		-- Use an on_attach function to only map the following keys
 		-- after the language server attaches to the current buffer
 		local on_attach = function(client, bufnr)
@@ -126,13 +133,29 @@ return {
 			"eslint",
 		}
 
+		-- Set up LSP attach autocmd
+		vim.api.nvim_create_autocmd("LspAttach", {
+			callback = function(args)
+				local client = vim.lsp.get_client_by_id(args.data.client_id)
+				on_attach(client, args.buf)
+			end,
+		})
+
 		-- Configure all servers with the same base settings
+		local lspconfig = require("lspconfig")
 		for _, server in ipairs(servers) do
-			vim.lsp.enable(server, {
-				on_attach = on_attach,
+			local config = {
 				capabilities = capabilities,
 				autostart = true,
-			})
+			}
+
+			-- Special config for marksman to handle telekasten files
+			if server == "marksman" then
+				config.filetypes = { "markdown", "telekasten" }
+			end
+
+			vim.lsp.config[server] = config
+			vim.lsp.enable(server)
 		end
 	end,
 }

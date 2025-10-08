@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-telescope/telescope.nvim",
+		"jalvesaq/cmp-zotcite",
 	},
 	lazy = false,
 	keys = {
@@ -15,6 +16,7 @@ return {
 				"pandoc",
 				"rmd",
 				"vimwiki",
+				"telekasten",
 			},
 		})
 	end,

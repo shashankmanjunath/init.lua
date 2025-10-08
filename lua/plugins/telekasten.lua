@@ -9,6 +9,7 @@ return {
 		require("telekasten").setup({
 			home = vim.fn.expand("~/Documents/notes/content"),
 		})
+
 		-- Launch panel if nothing is typed after <leader>z
 		vim.keymap.set("n", "<leader>f", "<cmd>Telekasten panel<CR>")
 

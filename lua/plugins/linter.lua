@@ -31,6 +31,7 @@ return {
 					lua = { "stylua" },
 					python = { "ruff_format" },
 					markdown = { "prettier" },
+					telekasten = { "prettier" },
 					sh = { "shfmt" },
 				},
 				format_on_save = {
