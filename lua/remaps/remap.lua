@@ -30,4 +30,4 @@ vim.keymap.set("n", "<leader>w", "<C-w><C-r><CR>", silentnoremap)
 vim.keymap.set("n", "<leader>e", "<C-w>:hide<CR>", silentnoremap)
 
 -- Terminal
-vim.api.nvim_set_keymap("t", "jk", "<C-\\><C-n>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "lk", "<C-\\><C-n>", { noremap = true, silent = true })
