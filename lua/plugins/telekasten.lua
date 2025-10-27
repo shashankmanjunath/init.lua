@@ -8,6 +8,7 @@ return {
 	config = function()
 		require("telekasten").setup({
 			home = vim.fn.expand("~/Documents/notes/content"),
+			auto_set_filetype = false,
 		})
 
 		-- Launch panel if nothing is typed after <leader>z

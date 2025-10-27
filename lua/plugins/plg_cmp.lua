@@ -38,23 +38,23 @@ return {
 		},
 		{ "saadparwaiz1/cmp_luasnip" },
 		-- Added for zotcite
-		{
-			"jalvesaq/cmp-zotcite",
-			dependencies = { "jalvesaq/zotcite" },
-		},
+		-- {
+		--   "jalvesaq/cmp-zotcite",
+		--   dependencies = { "jalvesaq/zotcite" },
+		-- },
 	},
 	event = { "InsertEnter", "BufEnter" },
 	config = function()
 		-- Configure cmp-zotcite to work with telekasten files
-		require("cmp_zotcite").setup({
-			filetypes = {
-				"markdown",
-				"pandoc",
-				"rmd",
-				"vimwiki",
-				"telekasten",
-			},
-		})
+		-- require("cmp_zotcite").setup({
+		--   filetypes = {
+		--     "markdown",
+		--     "pandoc",
+		--     "rmd",
+		--     "vimwiki",
+		--     "telekasten",
+		--   },
+		-- })
 
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
@@ -73,7 +73,7 @@ return {
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item
 			}),
 			sources = {
-				{ name = "cmp_zotcite" },
+				-- { name = "cmp_zotcite" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
