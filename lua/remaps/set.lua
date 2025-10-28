@@ -40,3 +40,5 @@ vim.api.nvim_set_var("python3_host_prog", "python")
 
 -- Fixing markdown style
 vim.g.markdown_recommended_style = 0
+
+vim.g.python3_host_prog = "/Users/smanjunath/.venv/nvim/bin/python"

@@ -7,7 +7,7 @@ return {
 	lazy = false,
 	config = function()
 		require("telekasten").setup({
-			home = vim.fn.expand("~/Documents/notes/content"),
+			home = vim.fn.expand("~/Documents/notes"),
 			auto_set_filetype = false,
 		})
 
