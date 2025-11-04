@@ -1,5 +1,4 @@
 return {
-	{ "junegunn/goyo.vim", cmd = "Goyo" },
 	{ "godlygeek/tabular", cmd = { "Tabularize", "Tab" } },
 	{
 		"lervag/vimtex",
@@ -21,12 +20,19 @@ return {
 			)
 		end,
 	},
+	-- {
+	--   "iamcco/markdown-preview.nvim",
+	--   run = "cd app && npm install",
+	--   setup = function()
+	--     vim.g.mkdp_filetypes = { "markdown" }
+	--   end,
+	--   ft = { "markdown" },
+	-- },
 	{
-		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
+		"OXY2DEV/markview.nvim",
+		lazy = false,
+
+		-- Completion for `blink.cmp`
+		-- dependencies = { "saghen/blink.cmp" },
 	},
 }

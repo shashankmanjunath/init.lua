@@ -26,26 +26,3 @@ require("lazy").setup({
 		{ import = "plugins" },
 	},
 })
-
--- plugins = {
---
---
---
---
--- 	{
--- 	},
---
--- 	-- Writing Documents
---
---
--- 	-- LaTeX handling
--- 	{  },
---
--- 	-- Markdown Handling
--- 	{
--- 	},
---
---
--- }
---
--- require("lazy").setup(plugins)

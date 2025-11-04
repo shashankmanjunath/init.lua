@@ -10,7 +10,7 @@ return {
 				lua = { "luacheck" },
 				sh = { "shellcheck" },
 				dockerfile = { "hadolint" },
-				py = { "pylint" },
+				py = { "ruff" },
 			}
 
 			-- Runs linter after write

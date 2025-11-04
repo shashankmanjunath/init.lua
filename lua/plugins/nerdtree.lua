@@ -33,6 +33,7 @@ return {
 		end,
 	},
 	{
+		-- TODO: switch to https://github.com/terrortylor/nvim-comment
 		"preservim/nerdcommenter",
 		event = "VeryLazy",
 		config = function()
