@@ -1,3 +1,7 @@
+-- Set up Python virtual environment PATH for all plugins
+local venv_path = vim.fn.expand("$HOME/.venv/nvim/bin")
+vim.env.PATH = venv_path .. ":" .. vim.env.PATH
+
 -- Sets custom neovim settings
 
 -- Encoding
@@ -36,9 +40,10 @@ vim.o.incsearch = true
 vim.o.hlsearch = true
 
 -- Setting python provider
-vim.api.nvim_set_var("python3_host_prog", "python")
+-- vim.api.nvim_set_var("python3_host_prog", "python")
 
 -- Fixing markdown style
 vim.g.markdown_recommended_style = 0
 
-vim.g.python3_host_prog = "/Users/smanjunath/.venv/nvim/bin/python"
+-- Properly expand $HOME for python provider
+vim.g.python3_host_prog = vim.fn.expand("$HOME/.venv/nvim/bin/python")

@@ -17,7 +17,7 @@ return {
 				"json",
 				"markdown",
 				"markdown_inline",
-				"latex",
+				-- "latex",
 			},
 			sync_install = false,
 			auto_install = true, -- Optional: Automatically install missing parsers
