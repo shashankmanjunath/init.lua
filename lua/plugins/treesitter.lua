@@ -5,7 +5,7 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
-			indent = { enable = true }, -- Enable indentation
+			indent = { enable = true },
 			ensure_installed = {
 				"lua",
 				"vimdoc",
@@ -20,13 +20,12 @@ return {
 				-- "latex",
 			},
 			sync_install = false,
-			auto_install = true, -- Optional: Automatically install missing parsers
-			highlight = { enable = true }, -- Enable syntax highlighting
+			auto_install = true,
+			highlight = {
+				enable = true,
+				disable = { "latex" },
+			}, -- Enable syntax highlighting
 			additional_vim_regex_highlighting = false,
-			-- ignore_install = { "some_language" }, -- Optional: languages to ignore auto-install for
-			-- modules = {
-			--   -- Further configure specific treesitter modules if needed
-			-- },
 		})
 	end,
 }

@@ -9,6 +9,7 @@ return {
 			vim.api.nvim_set_var("vimtex_view_method", "sioyek")
 			vim.api.nvim_set_var("vimtex_view_sioyek_exe", "/Applications/sioyek.app/Contents/MacOS/sioyek")
 			vim.api.nvim_set_var("vimtex_quickfix_mode", 0)
+			vim.api.nvim_set_var("vimtex_syntax_enabled", 1)
 
 			-- Setting build dir to subdirectory with name of the current file
 			vim.api.nvim_set_var("vimtex_compiler_latexmk", "{'build_dir': {-> expand(\"%:t:r\")}}")
@@ -20,19 +21,4 @@ return {
 			)
 		end,
 	},
-	-- {
-	--   "iamcco/markdown-preview.nvim",
-	--   run = "cd app && npm install",
-	--   setup = function()
-	--     vim.g.mkdp_filetypes = { "markdown" }
-	--   end,
-	--   ft = { "markdown" },
-	-- },
-	-- {
-	--   "OXY2DEV/markview.nvim",
-	--   lazy = false,
-	--
-	--   -- Completion for `blink.cmp`
-	--   -- dependencies = { "saghen/blink.cmp" },
-	-- },
 }
