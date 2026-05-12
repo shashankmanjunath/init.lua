@@ -26,8 +26,6 @@ return {
 					"dockerls",
 					-- Javascript
 					"eslint",
-				-- JSON/Markdown
-				"prettier",
 				},
 				-- Automatically install configured servers
 				automatic_installation = true,
