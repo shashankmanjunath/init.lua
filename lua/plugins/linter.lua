@@ -11,6 +11,8 @@ return {
 				sh = { "shellcheck" },
 				dockerfile = { "hadolint" },
 				py = { "ruff" },
+				json = { "prettier" },
+				markdown = { "prettier" },
 			}
 
 			-- Runs linter after write
@@ -33,6 +35,7 @@ return {
 					markdown = { "prettier" },
 					telekasten = { "prettier" },
 					sh = { "shfmt" },
+					json = { "prettier" },
 				},
 				format_on_save = {
 					timeout_ms = 500,
