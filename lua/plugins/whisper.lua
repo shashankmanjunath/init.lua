@@ -3,7 +3,7 @@ return {
 	config = function()
 		require("whisper").setup({
 			model = "base.en",
-			keybind = "<C-g>",
+			keybind = "<C-p>",
 			manual_trigger_key = "<Space>",
 			show_whipser_output = true,
 			step_ms = 3000,
@@ -11,6 +11,6 @@ return {
 		})
 	end,
 	keys = {
-		{ "<C-g>", mode = { "n", "i", "v" }, desc = "Toggle speech-to-text" },
+		{ "<C-p>", mode = { "n", "i", "v" }, desc = "Toggle speech-to-text" },
 	},
 }
