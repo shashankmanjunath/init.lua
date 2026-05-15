@@ -6,9 +6,24 @@ return {
 	},
 	lazy = false,
 	config = function()
+		local home = vim.fn.expand("~/Documents/notes/content")
 		require("telekasten").setup({
-			home = vim.fn.expand("~/Documents/notes/content"),
+			home = home,
 			auto_set_filetype = false,
+		})
+
+		local todo = require("utils.todo")
+
+		-- Populate to-dos from previous day when creating new daily note
+		vim.api.nvim_create_autocmd("BufEnter", {
+			pattern = "*-*-*.md",
+			callback = function(ev)
+				-- Only populate if the file is empty (new)
+				local line_count = vim.api.nvim_buf_line_count(0)
+				if line_count == 1 and vim.api.nvim_buf_get_lines(0, 0, 1, false)[1] == "" then
+					todo.populate_daily_note_todos(home)
+				end
+			end,
 		})
 
 		-- Launch panel if nothing is typed after <leader>z
