@@ -8,9 +8,9 @@ vim.keymap.set("i", "jk", "<Esc>", silentnoremap)
 vim.keymap.set("n", "<leader><space>", ":nohlsearch<CR>", silentnoremap)
 
 -- Markdown Preview Commands
-vim.keymap.set("n", "<C-s>", "<Plug>MarkdownPreview", silentnoremap)
-vim.keymap.set("n", "<M-s>", "<Plug>MarkdownPreviewStop", silentnoremap)
-vim.keymap.set("n", "<C-p>", "<Plug>MarkdownPreviewToggle", silentnoremap)
+-- vim.keymap.set("n", "<C-s>", "<Plug>MarkdownPreview", silentnoremap)
+-- vim.keymap.set("n", "<M-s>", "<Plug>MarkdownPreviewStop", silentnoremap)
+-- vim.keymap.set("n", "<C-p>", "<Plug>MarkdownPreviewToggle", silentnoremap)
 
 -- Spell list
 vim.keymap.set("n", "<leader>p", ":set spell spelllang=en_us<CR>", silentnoremap)
